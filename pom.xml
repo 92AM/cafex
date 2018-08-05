@@ -17,6 +17,11 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+		<clover-maven-plugin.version>4.2.1</clover-maven-plugin.version>
+		<maven-jar-plugin.verison>3.1.0</maven-jar-plugin.verison>
+		<junit.version>4.9</junit.version>
+		<projectlombok.version>1.18.2</projectlombok.version>
+		<system-rules.version>1.17.1</system-rules.version>
 	</properties>
 
 	<dependencies>
@@ -24,21 +29,21 @@
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>4.9</version>
+			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/com.github.stefanbirkner/system-rules -->
 		<dependency>
 			<groupId>com.github.stefanbirkner</groupId>
 			<artifactId>system-rules</artifactId>
-			<version>1.17.1</version>
+			<version>${system-rules.version}</version>
 			<scope>test</scope>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<version>1.18.2</version>
+			<version>${projectlombok.version}</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
@@ -49,7 +54,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
-				<version>3.1.0</version>
+				<version>${maven-jar-plugin.verison}</version>
 				<configuration>
 					<archive>
 						<manifest>
@@ -59,6 +64,24 @@
 						</manifest>
 					</archive>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.openclover</groupId>
+				<artifactId>clover-maven-plugin</artifactId>
+				<version>${clover-maven-plugin.version}</version>
+				<configuration>
+					<targetPercentage>50%</targetPercentage>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>verify</phase>
+						<goals>
+							<goal>instrument</goal>
+							<goal>check</goal>
+							<goal>clover</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
