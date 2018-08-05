@@ -14,4 +14,4 @@ In order to run the app provide it with the list of purchased items (case sensit
 `java -jar cafex.jar "Cola" "Coffee" "Cheese Sandwich"`
 
 ### Note
-I only tested the project in Eclipse, I haven't got round to building it or calling it from command line. The logic works, this is proven by the JUnit tests.
+I only tested the project in Eclipse and through command line. The logic works, this is proven by the JUnit tests.
