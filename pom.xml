@@ -70,7 +70,10 @@
 				<artifactId>clover-maven-plugin</artifactId>
 				<version>${clover-maven-plugin.version}</version>
 				<configuration>
-					<targetPercentage>50%</targetPercentage>
+					<excludes>
+						<exclude>com\capgemini\cafex\util\CafexConstants.*</exclude>
+					</excludes>
+					<targetPercentage>90%</targetPercentage>
 				</configuration>
 				<executions>
 					<execution>
