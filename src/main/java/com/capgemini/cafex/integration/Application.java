@@ -10,13 +10,13 @@ import com.capgemini.cafex.service.Bill;
  * @author Arka Mitra
  *
  */
-public class Application {
+class Application {
 
 	/**
 	 * Entry point java main method, invokes getFormattedBillForDisplay method of
 	 * Bill class, displays the final overall bill based on a input string array.
 	 * 
-	 * @param args
+	 * @param args String[]
 	 */
 	public static void main(String[] args) {
 		System.out.println(new Bill(args).getFormattedBillForDisplay());

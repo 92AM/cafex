@@ -11,7 +11,7 @@ import com.capgemini.cafex.model.MenuItem;
  * @author Arka Mitra
  *
  */
-public class ServiceCharge {
+class ServiceCharge {
 
 	/**
 	 * Using an enhanced for loop the getServiceCharge method calculates the service
@@ -23,8 +23,8 @@ public class ServiceCharge {
 	 * exceeded 20.00 then 20.00 will be returned, otherwise the serviceCharge will
 	 * be returned.
 	 * 
-	 * @param totalCost
-	 * @param menuItems
+	 * @param totalCost BigDecimal
+	 * @param menuItems List<com.capgemini.cafex.model.MenuItem>
 	 * @return serviceCharge as a BigDecimal value
 	 */
 	public static BigDecimal getServiceCharge(BigDecimal totalCost, List<MenuItem> menuItems) {

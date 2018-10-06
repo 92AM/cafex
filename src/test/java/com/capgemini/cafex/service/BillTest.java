@@ -55,7 +55,7 @@ public class BillTest {
 	@Test
 	public void testGetFormattedBillForDisplay() {
 		String[] purchasedItems = { "Cola", "Coffee", "Cheese Sandwich" };
-		assertEquals(NumberFormat.getCurrencyInstance(Locale.UK).format(new BigDecimal(3.85).doubleValue()).toString()
+		assertEquals(NumberFormat.getCurrencyInstance(Locale.UK).format(new BigDecimal(3.85).doubleValue())
 				.trim(), new Bill(purchasedItems).getFormattedBillForDisplay());
 	}
 }

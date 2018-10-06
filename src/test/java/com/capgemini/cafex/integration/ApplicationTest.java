@@ -26,7 +26,7 @@ public class ApplicationTest {
 	public void testMain() {
 		String[] purchasedItems = { "Cola", "Coffee", "Cheese Sandwich" };
 		Application.main(purchasedItems);
-		assertEquals(NumberFormat.getCurrencyInstance(Locale.UK).format(new BigDecimal(3.85).doubleValue()).toString()
+		assertEquals(NumberFormat.getCurrencyInstance(Locale.UK).format(new BigDecimal(3.85).doubleValue())
 				.trim(), systemOutRule.getLog().trim());
 	}
 }

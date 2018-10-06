@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Locale;
 
 import com.capgemini.cafex.model.MenuItem;
+import lombok.Getter;
 
 /**
  * Bill is a service level class that carries out operations to calculate the
@@ -16,9 +17,10 @@ import com.capgemini.cafex.model.MenuItem;
  * @author Arka Mitra
  *
  */
+@Getter
 public class Bill {
 
-	private List<MenuItem> items = new ArrayList<MenuItem>();
+	private final List<MenuItem> items = new ArrayList<>();
 
 	/**
 	 * Constructor of Bill class. This constructor accepts an array of string
@@ -27,7 +29,7 @@ public class Bill {
 	 * that it allows mapping to enum constants and finally added to the MenuItem
 	 * list called items using a forEach loop.
 	 * 
-	 * @param inputItems
+	 * @param inputItems String[]
 	 */
 	public Bill(String[] inputItems) {
 		Arrays.asList(inputItems).forEach(i -> this.items.add(MenuItem.valueOf(i.replaceAll("\\s", ""))));
@@ -53,15 +55,7 @@ public class Bill {
 	 * @return the bill in UK sterling format
 	 */
 	public String getFormattedBillForDisplay() {
-		return NumberFormat.getCurrencyInstance(Locale.UK).format(getBill().doubleValue()).toString().trim();
+		return NumberFormat.getCurrencyInstance(Locale.UK).format(getBill().doubleValue()).trim();
 	}
 
-	/**
-	 * Getter method to return list of MenuItems.
-	 * 
-	 * @return the items
-	 */
-	public List<MenuItem> getItems() {
-		return items;
-	}
 }
