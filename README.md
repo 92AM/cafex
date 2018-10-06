@@ -1,4 +1,4 @@
-# cafex - PSDDO Dev Exercise (DDCT)
+# cafex - PSDDO Capgemini Dev Exercise (DDCT)
 
 The cafex application accepts food and drink items which are available in the menu ( i.e. Cola, Coffee, Cheese Sandwich, Steak Sandwich), it then calculates the overall bill by adding service charge where appropriate. 
 
