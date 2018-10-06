@@ -1,8 +1,16 @@
 # Maven specific ignores
 /target/
-
+/log/
 
 # Eclipse specific ignores
 .settings/
 .classpath
 .project
+
+# Intellij specific ignores
+.idea/
+*.iml
+*.iws
+
+# Mac specific ignores
+.DS_Store
