@@ -23,6 +23,9 @@ In order to build the project please ensure that you are in the project root dir
 #### Maven clean and install build (excluding tests and clover instrumentation)
 `mvn clean install -DskipTests -Dmaven.clover.skip=true`
 
+#### Maven clean and test 
+`mvn clean test`
+
 ## Running the application
 In order to run the app provide it with the list of purchased items (case sensitive) e.g.:
 `java -jar cafex.jar "Cola" "Coffee" "Cheese Sandwich"`
